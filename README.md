@@ -1,24 +1,23 @@
-# task-list
+# To-Do Website
+A simple To-Do list webpage build using javascript framework i.e.[```vue.js```](https://vuejs.org/). You can add, delete and view tasks.
 
-## Project setup
-```
-npm install
-```
+## Step to run the project in localhost
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+- Clone the repository 
+    ```
+    git clone https://github.com/Drish-xD/vue-todo.git
+    ```
+- Goto the folder 
+    ```
+    cd vue-todo
+    ```
+- Install requirements using 
+    ```
+    npm install
+    ``` 
+- Run local server using 
+    ```
+    npm run serve
+    ```
+- Open  [```http://localhost:8080```](http://localhost:8080) in browser.
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
