@@ -1,5 +1,5 @@
 # To-Do Website
-A simple To-Do list webpage build using javascript framework i.e.[```vue.js```](https://vuejs.org/). You can add, delete and view tasks.
+A simple To-Do list webpage build using javascript framework i.e. [```vue.js```](https://vuejs.org/). You can add, delete and view tasks.
 
 ## Step to run the project in localhost
 
