@@ -9,14 +9,10 @@ npm run build
 # navigate into the build output directory
 cd dist
 
-# if you are deploying to a custom domain
-# echo 'www.example.com' > CNAME
-
 git init
 git add -A
 git commit -m 'deploy'
 
-# if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:drish-xd/vue-todo.git main:master
+git push -f git@github.com:Drish-xD/vue-todo.git master:gh-pages
 
 cd -
