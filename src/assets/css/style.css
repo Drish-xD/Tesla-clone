@@ -6,10 +6,20 @@
 }
 
 html {
-    scroll-behavior: smooth;    
+    scroll-behavior: smooth;
 }
 
 body {
     background-color: #101010;
     color: #f8f8f8;
+    text-align: center;
+    color: #2c3e50;
+}
+
+h1 {
+    font: 800 50px Arial;
+}
+
+p {
+    font: 600 20px Arial;
 }
