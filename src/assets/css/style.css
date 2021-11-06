@@ -1,0 +1,15 @@
+/* global Style */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;    
+}
+
+body {
+    background-color: #101010;
+    color: #f8f8f8;
+}
