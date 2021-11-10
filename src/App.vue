@@ -1,7 +1,13 @@
 <template>
   <LogoTesla />
-  <div id="nav">
+  <div
+    id="nav"
+    :style="{ 'background-color': isopen ? '#ffffff00' : '#fff' }"
+    @click="toggleClass()"
+  >
     <a
+      id="navlinks"
+      class="open"
       v-for="section in homeSections"
       :key="section.id"
       :href="'#' + section.idSection"
@@ -9,6 +15,7 @@
     >
       {{ section.title }}
     </a>
+    <div class="menu" @click="openmenu()">Menu</div>
   </div>
   <router-view />
 </template>
@@ -17,6 +24,11 @@
 import LogoTesla from "@/components/LogoTesla";
 
 export default {
+  data: function () {
+    return {
+      isopen: true,
+    };
+  },
   components: {
     LogoTesla,
   },
@@ -26,10 +38,18 @@ export default {
     },
   },
   methods: {
+    toggleClass: function () {
+      this.isopen = !this.isopen;
+    },
     changeSection(section) {
       setTimeout(() => {
         this.$store.dispatch("changeSection", section);
       }, 1000);
+    },
+    openmenu() {
+      document.querySelectorAll("#navlinks").forEach(function (e) {
+        e.classList.toggle("open");
+      });
     },
   },
 };
@@ -38,7 +58,9 @@ export default {
 <style>
 @import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 
-#app {
+* {
+  margin: 0;
+  padding: 0;
   font-family: "Raleway", sans-serif;
   text-align: center;
 }
@@ -49,22 +71,59 @@ export default {
   display: flex;
   gap: 40px;
   justify-content: center;
-  width: calc(100% - 60px);
-  padding: 30px;
+  width: 100%;
+  padding: 30px 0;
+  transition: all 0.5s ease-in-out;
 }
 
 #nav a {
   font-weight: 700;
   color: #2c3e50;
   text-decoration: none;
+  padding: 5px 10px;
+  opacity: 1;
 }
 
 #nav a.router-link-exact-active {
   color: red;
 }
 
-* {
-  margin: 0;
-  padding: 0;
+a:hover,
+.menu:hover {
+  background: #2c3e503c;
+  border-radius: 25px;
+}
+
+.menu {
+  display: none;
+  right: 30px;
+  font-weight: 700;
+  position: absolute;
+  padding: 5px 10px;
+  color: #2c3e50;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .menu {
+    display: block;
+    top: 25px;
+    background: #2c3e503c;
+    border-radius: 25px;
+  }
+
+  #nav {
+    right: 0;
+    flex-direction: column;
+  }
+
+  #nav a {
+    margin-top: 30px;
+  }
+
+  .open {
+    display: none;
+    opacity: 0 !important;
+  }
 }
 </style>

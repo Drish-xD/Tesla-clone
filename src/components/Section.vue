@@ -100,4 +100,10 @@ button {
   font-weight: 550;
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .button-container {
+    flex-direction: column;
+  }
+}
 </style>

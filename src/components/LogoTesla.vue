@@ -17,3 +17,9 @@ export default {
   name: "LogoTesla",
 };
 </script>
+
+<style scoped>
+svg {
+  z-index: 550;
+}
+</style>
