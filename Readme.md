@@ -1,6 +1,6 @@
-# Vue Website 
+# Tesla Clone
 
-A simple website build using javascript framework i.e. [```vue.js```](https://vuejs.org/).
+A Tesla Clone website build using javascript framework i.e. [```vue.js```](https://vuejs.org/).
 
 ---
 
