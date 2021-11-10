@@ -1,21 +1,17 @@
 <template>
   <LogoTesla />
-  <div
-    id="nav"
-    :style="{ 'background-color': isopen ? '#ffffff00' : '#fff' }"
-    @click="toggleClass()"
-  >
+  <div id="nav" :style="{ 'background-color': isopen ? '#ffffff00' : '#fff' }">
     <a
       id="navlinks"
       class="open"
       v-for="section in homeSections"
       :key="section.id"
       :href="'#' + section.idSection"
-      @click="changeSection(section.title)"
+      @click="changeSection(section.title), openmenu(), toggleClass()"
     >
       {{ section.title }}
     </a>
-    <div class="menu" @click="openmenu()">Menu</div>
+    <div class="menu" @click="openmenu(), toggleClass()">Menu</div>
   </div>
   <router-view />
 </template>
